@@ -16,7 +16,7 @@
     "test-dev": "jest --watch",
     "dev": "npm run start-dev & npm run react-dev",
     "test": "jest --coverage --verbose",
-    "seed": "mysql -u root -pnopass < schema.sql && node database/generateData.js"
+    "seed": "mysql -u root -p < schema.sql && node database/generateData.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

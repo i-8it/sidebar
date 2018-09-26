@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const db = new Sequelize('YelpReactorSidebar', 'root', 'nopass', {
+const db = new Sequelize('YelpReactorSidebar', 'root', 'password', {
   dialect: 'mysql',
 });
 
