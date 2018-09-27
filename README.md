@@ -19,7 +19,10 @@
 
 > Some usage instructions
 
-##CRUD API
+## CRUD API
+
+routes for GET, POST, PUT & DELETE
+
 
 ## Requirements
 
