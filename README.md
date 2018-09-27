@@ -21,7 +21,18 @@
 
 ## CRUD API
 
-routes for GET, POST, PUT & DELETE
+Create
+ - Adds a new restaurant to the database
+ - POST - /api/restaurant
+Read
+ - Retrieves a Restaurant from the database, given its name or ID
+ - GET - /api/restaurant/:nameOrID
+Update
+ - Updates a restaurant, given its name or ID
+ - PUT - /api/restaurant/:nameOrID
+Delete
+ - Deletes a restaurant from the database, given its name or ID
+ - DELETE - /api/restaurant/:nameOrID
 
 
 ## Requirements
