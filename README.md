@@ -19,6 +19,8 @@
 
 > Some usage instructions
 
+##CRUD API
+
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).

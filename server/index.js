@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const names = require('../database/businessNames.js');
 
 const app = express();
-const router = require('./routes.js');
+const router = require('./routes/sidebar.js');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
