@@ -10,20 +10,41 @@ module.exports = {
       const id = nameOrId;
       return Restaurant.findAll({ where: { id } });
     },
-    post: obj => Restaurant.build(obj),
+
+    post: (obj) => {
+      const newObj = obj;
+      return Restaurant.build(newObj).save();
+    },
+
     put: (nameOrId) => {
-      Restaurant.findAll({ where: { nameOrId } })
+      if (isNaN(nameOrId)) {
+        const name = nameOrId;
+        return Restaurant.findAll({ where: { name } })
+          .on('success', (restaurant) => {
+            if (restaurant) {
+              restaurant.updateAttributes({
+                name: 'a very different title now',
+              }).save()
+                .success(() => console.log('updated'))
+                .error(() => console.log('error'));
+            }
+          });
+      }
+      const id = nameOrId;
+      return Restaurant.findAll({ where: { id } })
         .on('success', (restaurant) => {
           if (restaurant) {
             restaurant.updateAttributes({
-              title: 'a very different title now',
-            })
+              name: 'a very different title now',
+            }).save()
               .success(() => console.log('updated'))
               .error(() => console.log('error'));
           }
         });
     },
+
     delete: (nameOrId) => {
+      console.log('deleting');
       if (isNaN(nameOrId)) {
         const name = nameOrId;
         return Restaurant.destroy({ where: { name } });

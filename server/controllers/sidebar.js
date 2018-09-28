@@ -1,3 +1,4 @@
+const parser = require('body-parser');
 const models = require('../models/sidebar');
 
 module.exports = {
@@ -9,9 +10,9 @@ module.exports = {
     },
 
     post: (req, res) => {
-      const newRestuarant = JSON.parse(req.body.review);
+      const newRestuarant = JSON.stringify(req.body);
       models.restaurants.post(newRestuarant)
-        .then(data => res.send(data))
+        .then(() => res.send('posted'))
         .catch(err => res.send(err));
     },
 
@@ -23,7 +24,7 @@ module.exports = {
 
     delete: (req, res) => {
       models.restaurants.delete(req.params.nameOrId)
-        .then(data => res.send(data))
+        .then(() => res.send('deleted'))
         .catch(err => res.send(err));
     },
   },
