@@ -1,10 +1,9 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const controllers = require('../controllers/sidebar.js');
 
-router.get('/:nameOrId', controllers.restaurants.get);
-router.post('/', controllers.restaurants.post);
-router.delete('/:id', controllers.restaurants.delete);
-router.put('/:id', controllers.restaurants.put);
+router.get('/restaurants/:nameOrId', controllers.restaurants.get);
+router.post('/restaurants', controllers.restaurants.post);
+router.delete('/restaurants/:nameOrId', controllers.restaurants.delete);
+router.put('/restaurants/:nameOrId', controllers.restaurants.put);
 
 module.exports = router;

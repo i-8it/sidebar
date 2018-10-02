@@ -1,19 +1,20 @@
-const { Restaurant } = require('../../database/index');
+const { Restaurant } = require('../../Mongo/connectionMongo');
 
 module.exports = {
   restaurants: {
     get: (nameOrId) => {
       if (isNaN(nameOrId)) {
         const name = nameOrId;
-        return Restaurant.findAll({ where: { name } });
+        console.log(name);
+        return Restaurant.find({ name: name });
       }
       const id = nameOrId;
-      return Restaurant.findAll({ where: { id } });
+      return Restaurant.find({ _id: id });
     },
 
     post: (obj) => {
       const newObj = obj;
-      return Restaurant.build(newObj).save();
+      return Restaurant.insertOne(newObj);
     },
 
     put: (nameOrId) => {

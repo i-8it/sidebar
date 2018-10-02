@@ -21,18 +21,18 @@
 
 ## CRUD API
 
-###Create
+### Create
  #### Adds a new restaurant to the database
- - POST - /api/restaurant
+ - POST - /api/sidebar/restaurants
 ### Read
  #### Retrieves a Restaurant from the database, given its name or ID
- - GET - /api/restaurant/:nameOrID
+ - GET - /api/sidebar/restaurants/:nameOrID
 ### Update
  #### Updates a restaurant, given its name or ID
- - PUT - /api/restaurant/:nameOrID
+ - PUT - /api/sidebar/restaurants/:nameOrID
 ### Delete
  #### Deletes a restaurant from the database, given its name or ID
- - DELETE - /api/restaurant/:nameOrID
+ - DELETE - /api/sidebar/restaurants/:nameOrID
 
 
 ## Requirements

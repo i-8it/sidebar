@@ -1,7 +1,6 @@
 const faker = require('faker');
 
 const generateRandomInt = (max, min = 0) => min + Math.floor(Math.random() * Math.floor(max - min));
-
 const generateRandomBoolean = (offset = 0.5) => Math.floor(offset + Math.random()) > 0;
 
 
@@ -49,7 +48,7 @@ const genFunc = () => {
 const getNames = () => {
   const names = [];
   for (let i = 0; i < 1000000; i++) {
-    names.push((`${faker.name.firstName()}'s ${faker.commerce.productAdjective()} ${foods[Math.round(Math.random() * 281)]}`).toLowerCase());
+    names.push((`${faker.name.firstName()}'s ${faker.commerce.productAdjective()} ${foods[Math.round(Math.random() * 281)]} #${i+1}`).toLowerCase());
     if (i === 1000000) {
       console.log('at ONE MILLION');
     } else if (i === 5000000) {

@@ -1,17 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const readThis = path.join('./RestaurantObjs', 'tenthMill.json');
+const readThis = path.join('./RestaurantObjs', '1Mill.json');
 
 
 console.time('readJSON');
-fs.readFile('./smallInfo.json', 'utf8', (err, data) => {
+fs.readFile(readThis, 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
     const obj = JSON.parse(data);
     console.log(obj.length);
-    console.log(obj[obj.length-1]);
+    console.log(obj[49]);
     console.timeEnd('readJSON');
   }
 });
