@@ -1,5 +1,5 @@
 const parser = require('body-parser');
-const models = require('../models/sidebar');
+const models = require('../models/sidebarMongo');
 
 module.exports = {
   restaurants: {

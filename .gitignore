@@ -27,4 +27,5 @@ dist/
 # 10M Generated Data
 data/RestaurantNames
 data/RestaurantObjs
+data/Names
 

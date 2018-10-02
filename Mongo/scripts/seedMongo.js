@@ -1,4 +1,4 @@
-const { saveObj } = require('./connectionMongo.js');
+const { saveObj } = require('../connectionMongo.js');
 
 const data = {
   _id: 1,

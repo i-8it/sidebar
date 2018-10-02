@@ -6,8 +6,9 @@ mongoose.connect('mongodb://localhost/27017');
 const repoSchema = mongoose.Schema({
   _id: Number,
   name: String,
-  priceRange: String,
+  priceRange: Number,
   takesReservation: Boolean,
+  healthScore: Number,
   Monday: String,
   Tuesday: String,
   Wednesday: String,
@@ -25,6 +26,7 @@ const saveObj = (rest) => {
     name: rest.name,
     priceRange: rest.priceRange,
     takesReservation: rest.takesReservation,
+    healthScore: rest.healthScore,
     Monday: rest.Monday,
     Tuesday: rest.Tuesday,
     Wednesday: rest.Wednesday,
@@ -42,4 +44,4 @@ const saveObj = (rest) => {
   });
 };
 
-module.exports = { saveObj };
+module.exports = { saveObj, Restaurant };

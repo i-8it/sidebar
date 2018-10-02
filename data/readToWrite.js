@@ -1,11 +1,10 @@
 const fs = require('fs');
 const { generateRestaurantInfo } = require('./writeRestaurantJSON');
 const path = require('path');
-const readFrom = path.join('./RestaurantNames/', 'array0.json');
 const writeTo = path.join('./RestaurantObjs', '1Mill.json');
 
 console.time('GenerateData1');
-fs.readFile(path.join('./RestaurantNames/', 'array0.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array0.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -22,7 +21,7 @@ fs.readFile(path.join('./RestaurantNames/', 'array0.json'), 'utf8', (err, data) 
 });
 
 console.time('GenerateData2');
-fs.readFile(path.join('./RestaurantNames/', 'array1.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array1.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -39,7 +38,7 @@ fs.readFile(path.join('./RestaurantNames/', 'array1.json'), 'utf8', (err, data) 
 });
 
 console.time('GenerateData3');
-fs.readFile(path.join('./RestaurantNames/', 'array2.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array2.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -56,7 +55,7 @@ fs.readFile(path.join('./RestaurantNames/', 'array2.json'), 'utf8', (err, data) 
 });
 
 console.time('GenerateData4');
-fs.readFile(path.join('./RestaurantNames/', 'array3.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array3.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -73,7 +72,7 @@ fs.readFile(path.join('./RestaurantNames/', 'array3.json'), 'utf8', (err, data) 
 });
 
 console.time('GenerateData5');
-fs.readFile(path.join('./RestaurantNames/', 'array4.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array4.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -90,7 +89,7 @@ fs.readFile(path.join('./RestaurantNames/', 'array4.json'), 'utf8', (err, data) 
 });
 
 console.time('GenerateData6');
-fs.readFile(path.join('./RestaurantNames/', 'restaurant1.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array5.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -107,7 +106,7 @@ fs.readFile(path.join('./RestaurantNames/', 'restaurant1.json'), 'utf8', (err, d
 });
 
 console.time('GenerateData7');
-fs.readFile(path.join('./RestaurantNames/', 'restaurant2.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array6.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -124,7 +123,7 @@ fs.readFile(path.join('./RestaurantNames/', 'restaurant2.json'), 'utf8', (err, d
 });
 
 console.time('GenerateData8');
-fs.readFile(path.join('./RestaurantNames/', 'restaurant3.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array7.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -141,7 +140,7 @@ fs.readFile(path.join('./RestaurantNames/', 'restaurant3.json'), 'utf8', (err, d
 });
 
 console.time('GenerateData9');
-fs.readFile(path.join('./RestaurantNames/', 'restaurant4.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array8.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {
@@ -158,7 +157,7 @@ fs.readFile(path.join('./RestaurantNames/', 'restaurant4.json'), 'utf8', (err, d
 });
 
 console.time('GenerateData10');
-fs.readFile(path.join('./RestaurantNames/', 'restaurant5.json'), 'utf8', (err, data) => {
+fs.readFile(path.join('./Names/', 'array9.json'), 'utf8', (err, data) => {
   if (err) {
     console.log('error');
   } else {

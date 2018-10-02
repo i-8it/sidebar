@@ -11,7 +11,7 @@ fs.readFile(readThis, 'utf8', (err, data) => {
   } else {
     const obj = JSON.parse(data);
     console.log(obj.length);
-    console.log(obj[0]);
+    console.log(obj[49]);
     console.timeEnd('readJSON');
   }
 });

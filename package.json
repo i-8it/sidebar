@@ -7,10 +7,10 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {
+  "scripts": { 
     "seed-cci": "mysql -h 127.0.0.1 -u root < schema.sql && node database/generateData.js",
     "start-cci": "node server/server.js & sleep 10 && npm run seed-cci",
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "start-dev": "nodemon server/server.js",
     "react-dev": "webpack -d --watch",
     "test-dev": "jest --watch",
@@ -34,6 +34,7 @@
     "node-fetch": "^2.2.0",
     "npm": "^6.4.1",
     "path": "^0.12.7",
+    "pg": "^7.4.3",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
