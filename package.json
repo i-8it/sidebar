@@ -7,7 +7,7 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": { 
+  "scripts": {
     "seed-cci": "mysql -h 127.0.0.1 -u root < schema.sql && node database/generateData.js",
     "start-cci": "node server/server.js & sleep 10 && npm run seed-cci",
     "start": "node server/server.js",
@@ -31,6 +31,7 @@
     "morgan": "^1.9.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
+    "newrelic": "^4.9.0",
     "node-fetch": "^2.2.0",
     "npm": "^6.4.1",
     "path": "^0.12.7",

@@ -4,8 +4,10 @@ module.exports = {
   restaurants: {
     get: (nameOrId) => {
       if (isNaN(nameOrId)) {
-        const name = nameOrId;
+        let name = nameOrId;
+        name = name.replace('no', "#");
         console.log(name);
+
         return Restaurant.find({ name: name });
       }
       const id = nameOrId;

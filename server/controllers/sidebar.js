@@ -1,11 +1,13 @@
 const parser = require('body-parser');
-const models = require('../models/sidebarMongo');
+const models = require('../models/sidebarPostgres');
 
 module.exports = {
   restaurants: {
     get: (req, res) => {
       models.restaurants.get(req.params.nameOrId)
-        .then(data => res.send(data))
+        .then((data) => {
+          return (res.send(data));
+        })
         .catch(err => res.send(err));
     },
 

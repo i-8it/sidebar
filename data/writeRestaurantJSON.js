@@ -6,7 +6,7 @@ const generateRestaurantInfo = (allRestaurants, arr, prefix) => {
   const midDayClose = ['1:30 pm', '2:00 pm', '2:30 pm'];
   const midDayOpen = ['4:00 pm', '4:30 pm', '5:30 pm', '6:00 pm'];
   const close = ['10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm'];
-  for (let i = 0; i < allRestaurants.length; i++) {
+  for (let i = 0; i < allRestaurants.length / 20; i++) {
     if (i === 500000) {
       console.log('half');
     }
