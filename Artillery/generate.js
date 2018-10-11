@@ -1,4 +1,4 @@
-// 
+//
 
 const fs = require('fs');
 const { generateRestaurantInfo } = require('../data/writeRestaurantJSON');
@@ -20,3 +20,4 @@ fs.readFile(path.join('../data/Names/', 'array0.json'), 'utf8', (err, data) => {
     });
   }
 });
+

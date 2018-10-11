@@ -2,7 +2,7 @@ config:
   target: "http://localhost:3000"
   phases:
     - duration: 2
-      arrivalRate: 10
+      arrivalRate: 50
   payload:
     path: "200objs.csv"
     fields:

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bodyParser = require('body-parser');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
-const controllers = require('../controllers/nonORM.js');
+const controllers = require('../controllers/sidebar.js');
 
 router.get('/restaurants/:nameOrId', controllers.restaurants.get);
 router.post('/restaurants/', urlencodedParser, controllers.restaurants.post);

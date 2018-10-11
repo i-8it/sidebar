@@ -29,3 +29,6 @@ data/RestaurantNames
 data/RestaurantObjs
 data/Names
 
+# Keys
+.env
+

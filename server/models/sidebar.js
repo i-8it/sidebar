@@ -1,56 +1,68 @@
-const { Restaurant } = require('../../database/index');
+const { pgClient } = require('../../Postgress/connection');
+
+const getQuery = (q, cb) => {
+  pgClient.query(q, (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+    cb(data.rows[0]);
+  });
+};
+const postQuery = (q, cb) => {
+  pgClient.query(q, (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+    cb(data);
+  });
+};
 
 module.exports = {
   restaurants: {
-    get: (nameOrId) => {
+    get: (nameOrId, cb) => {
       if (isNaN(nameOrId)) {
-        const name = nameOrId;
-        return Restaurant.findAll({ where: { name } });
+        let name = nameOrId.replace('num', '#');
+        name = name.replace("'", "''");
+        const q = `SELECT * FROM restaurants WHERE (name = '${name}')`;
+        getQuery(q, cb);
+      } else {
+        const id = nameOrId;
+        const q = `SELECT * FROM restaurants WHERE (id =${id})`;
+        getQuery(q, cb);
       }
-      const id = nameOrId;
-      return Restaurant.findAll({ where: { id } });
     },
 
-    post: (obj) => {
-      const newObj = obj;
-      return Restaurant.build(newObj).save();
+    post: (obj, cb) => {
+      const q = `INSERT INTO restaurants VALUES
+      (${obj.id},'${obj.name}',${obj.priceRange},${obj.healthScore},${obj.takesReservation},'${obj.Monday}','${obj.Tuesday}','${obj.Wednesday}',
+        '${obj.Thursday}', '${obj.Friday}', '${obj.Saturday}', '${obj.Sunday}')`;
+      postQuery(q, cb);
     },
 
-    put: (nameOrId) => {
+    put: (nameOrId, cb) => {
       if (isNaN(nameOrId)) {
-        const name = nameOrId;
-        return Restaurant.findAll({ where: { name } })
-          .on('success', (restaurant) => {
-            if (restaurant) {
-              restaurant.updateAttributes({
-                name: 'a very different title now',
-              }).save()
-                .success(() => console.log('updated'))
-                .error(() => console.log('error'));
-            }
-          });
+        let name = nameOrId.replace('num', '#');
+        name = name.replace("'", "''");
+        const q = `UPDATE "restaurants" SET "priceRange" = 4 WHERE name = '${name}'`;
+        getQuery(q, cb);
+      } else {
+        const id = nameOrId;
+        const q = `UPDATE "restaurants" SET "priceRange" = 4 WHERE id = ${id}`;
+        getQuery(q, cb);
       }
-      const id = nameOrId;
-      return Restaurant.findAll({ where: { id } })
-        .on('success', (restaurant) => {
-          if (restaurant) {
-            restaurant.updateAttributes({
-              name: 'a very different title now',
-            }).save()
-              .success(() => console.log('updated'))
-              .error(() => console.log('error'));
-          }
-        });
     },
 
-    delete: (nameOrId) => {
-      console.log('deleting');
+    delete: (nameOrId, cb) => {
       if (isNaN(nameOrId)) {
-        const name = nameOrId;
-        return Restaurant.destroy({ where: { name } });
+        let name = nameOrId.replace('num', '#');
+        name = name.replace("'", "''");
+        const q = `DELETE FROM restaurants WHERE (name = '${name}')`;
+        getQuery(q, cb);
+      } else {
+        const id = nameOrId;
+        const q = `DELETE FROM restaurants WHERE (id = ${id})`;
+        getQuery(q, cb);
       }
-      const id = nameOrId;
-      return Restaurant.destroy({ where: { id } });
     },
   },
 };

@@ -10,7 +10,7 @@
   "scripts": {
     "seed-cci": "mysql -h 127.0.0.1 -u root < schema.sql && node database/generateData.js",
     "start-cci": "node server/server.js & sleep 10 && npm run seed-cci",
-    "start": "node server/server.js",
+    "start": "node server/index.js",
     "start-dev": "nodemon server/server.js",
     "react-dev": "webpack -d --watch",
     "test-dev": "jest --watch",
@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -40,6 +43,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
+    "redis": "^2.8.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "sequelize": "^4.38.0",
