@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+  # payload:
+  #   path: "id.csv"
+  #   fields:
+  #     - "id"
+scenarios:
+  - name: "Stress Testing"
+    flow:
+      - loop:
+          - get:
+              url: "/{{$randomNumber(8000000, 10000000)}}/"      
+        count: 500
