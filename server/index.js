@@ -2,7 +2,7 @@ require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-// const client = require('./redisConnection');
+const client = require('./redisConnection');
 
 
 const app = express();
@@ -27,7 +27,8 @@ const cache = (req, res, next) => {
     }
   });
 };
-//app.get('/api/sidebar/restaurants/:nameOrId', cache);
+
+app.get('/api/sidebar/restaurants/:nameOrId', cache);
 app.use('/api/sidebar', router);
 
 app.set('port', process.env.PORT || 3000);

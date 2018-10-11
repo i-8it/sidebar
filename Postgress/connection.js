@@ -5,6 +5,7 @@ const connectionString = {
   host: process.env.PG_HOSTNAME, // server name or IP address;
   port: process.env.PG_PORT,
   database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
   user: process.env.PG_USER,
 };
 
