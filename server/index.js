@@ -1,4 +1,3 @@
-require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
@@ -11,6 +10,10 @@ const router = require('./routes/sidebar.js');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(compression());
+
+app.use('/loaderio-89cd58c52fc0a961ea0df9d910607317.txt', (req, res) => {
+  res.send('loaderio-89cd58c52fc0a961ea0df9d910607317');
+});
 
 app.use('/:nameOrId', express.static('public'));
 const cache = (req, res, next) => {
