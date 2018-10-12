@@ -2,18 +2,20 @@ const { pgClient } = require('../../Postgress/connection');
 
 const getQuery = (q, cb) => {
   pgClient.query(q, (err, data) => {
-    if (err) {
-      console.log(err);
+    if (err || !data) {
+      console.log(err || 'wrong data');
+    } else if (data) {
+      cb(data.rows[0]);
     }
-    cb(data.rows[0]);
   });
 };
 const postQuery = (q, cb) => {
   pgClient.query(q, (err, data) => {
     if (err) {
       console.log(err);
+    } else if (data) {
+      cb(data);
     }
-    cb(data);
   });
 };
 
@@ -23,7 +25,7 @@ module.exports = {
       if (isNaN(nameOrId)) {
         let name = nameOrId.replace('num', '#');
         name = name.replace("'", "''");
-        const q = `SELECT * FROM restaurants WHERE (name = '${name}')`;
+        const q = `SELECT * FROM restaurants WHERE ("Name" = '${name}')`;
         getQuery(q, cb);
       } else {
         const id = nameOrId;
