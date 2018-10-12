@@ -16,6 +16,7 @@ app.use('/loaderio-89cd58c52fc0a961ea0df9d910607317.txt', (req, res) => {
 });
 
 app.use('/:nameOrId', express.static('public'));
+
 const cache = (req, res, next) => {
   const key = req.params.nameOrId;
   client.get(key, (err, data) => {
